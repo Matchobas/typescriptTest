@@ -1,7 +1,9 @@
-import express from 'express';
+import express from 'express'
 
-const app = express();
+import { createCourse } from './routes'
 
-app.listen(3333, () => {
-    console.log("Tipagem é foda, lesgo");
-});
+const app = express()
+
+app.get('/', createCourse)
+
+app.listen(3333, () => console.log('Tipagem é foda, lesgo'))
